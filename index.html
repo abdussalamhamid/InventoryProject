@@ -1,0 +1,305 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #000000;
+        text-align: center;
+        padding: 8px;
+      }
+
+      .center {
+      margin: auto;
+      width: 50%;
+      border: 3px solid green;
+      padding: 10px;
+    }
+
+      .buttons{
+        border: none;
+        color: black;
+        padding: 10px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 80px;
+      }
+
+      .button0 {
+      background-color: rgb(0, 253, 42);
+      color: black;
+      border: 2px solid #06ba00;
+    }
+
+    .button0:hover {
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+    }
+
+      .button1 {
+        background-color: rgb(0, 153, 255);
+        color: black;
+        border: 2px solid #4c8baf;
+      }
+
+      .button1:hover {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+      }
+
+      .button2 {
+      background-color: rgb(253, 0, 0);
+      color: black;
+      border: 2px solid #ba0000;
+    }
+
+    .button2:hover {
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+    }
+      
+      tr:nth-child(even) {
+        background-color: #00fa7d;
+      }
+      .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+
+      /* body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      } */
+
+      /* .topnav {
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      .topnav a.active {
+        background-color: #04AA6D;
+        color: white;
+      } */
+      </style>
+    <title> Inventory Co </title>
+    <meta charset="UTF-8">
+    <!-- <script>
+      var baseurl = "http://localhost:8080/persons";
+      function loadPersons(){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET",baseurl + "/all",true);
+        xmlhttp.onreadystatechange = function() {
+          if(xmlhttp.readyState ===4 && xmlhttp.status ===200){
+            var persons = JSON.parse(xmlhttp.responseText);
+            var tbltop = `<table>
+              <h2 style= "text-align: center;">Person Info</h2>
+			    <tr><th>ID</th><th>Item Name</th><th>Price</th><th>Quantity</th><th>Date</th><th>Update/Delete</th></tr>`;
+            //main table content we fill from data from the rest call
+            var main ="";
+            for (i = 0; i < persons.length; i++){
+              main += "<tr><td>"+persons[i].id+"</td><td>"+persons[i].name+"</td><td>"+persons[i].price+"</td><td>"+persons[i].qty+"</td><td>"+persons[i].date+"</td><td><button class='buttons button1'>See Details</button><button class='buttons button2'>Delete</button></td></tr>";
+            }
+            var tblbottom = "</table>";
+            var tbl = tbltop + main + tblbottom;
+            document.getElementById("personinfo").innerHTML = tbl;
+          }
+        };
+        xmlhttp.send();
+      }
+      window.onload = function(){
+        loadPersons();
+      }
+    </script> -->
+  </head>
+  <body class="w3-light-grey">
+    <!-- <div class="topnav">
+      <a class="active" href="#home">Home</a>
+      <a href="#news">Create Inventory</a>
+      <a href="#contact">Update Inventory</a>
+      <a href="#about">About</a>
+    </div> -->
+
+    <!-- Navigation Bar -->
+    <div class="w3-bar w3-white w3-border-bottom w3-xlarge">
+      <a href="#" class="w3-bar-item w3-button w3-text-red w3-hover-red"><b><i class="fa fa-map-marker w3-margin-right"></i>Invetory Co.</b></a>
+      <a href="#" class="w3-bar-item w3-button w3-right w3-hover-red w3-text-grey"><i class="fa fa-search"></i></a>
+    </div>
+
+    <!-- Header -->
+    <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+      <img class="w3-image" src="Inventory.jpg" alt="London" width="1500" height="5">
+      <div class="w3-display-middle" style="width:65%">
+        <div class="w3-bar w3-black">
+          <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Flight');"><img src="storage.png" width="20" height="20">Inventory</button>
+        </div>
+
+        <!-- Tabs -->
+        <form action="#" onsubmit="createItem(); return false;">
+          <div id="Flight" class="w3-container w3-white w3-padding-16 myLink">
+            <h3>Register New Inventory Here</h3>
+            <div class="w3-row-padding" style="margin:0 -16px;">
+  
+              <div class="w3-half">
+                <label>Name</label>
+                <input id="itemName" class="w3-input w3-border" type="text" placeholder="Item Name">
+              </div>
+              <div class="w3-half">
+                <label>Price</label>
+                <input id="price" class="w3-input w3-border" type="text" placeholder="Item Price">
+              </div>
+              <div class="w3-half">
+                <label>Quantity</label>
+                <input id="qty" class="w3-input w3-border" type="text" placeholder="Number of items">
+              </div>
+  
+              <div class="w3-half">
+                <label>Description</label>
+                <input id="desc" class="w3-input w3-border" type="text" placeholder="Put any comment about the item">
+              </div>
+              <p><button type="submit" class="buttons button0">Create</button></p>
+            </div>
+          </div>
+        </form>
+
+    </header>
+
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:1100px;">
+
+      <div style="margin-bottom: 20px;">
+        <h2 style= "text-align: center;">Inventory Info</h2>
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Item Name</th><th>Price</th><th>Quantity</th><th>Date</th><th>See Details/Delete</th></tr>
+          </thead>
+          <tbody id="Inventory">
+
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Modal content -->
+      
+      <div id="orderModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+              <span style="margin-top: -9px;" class="close" onclick="closeDetailModal(); return false;">&times;</span>
+              <h2>Details</h2>
+          </div>
+          <div class="modal-body">
+
+              <div id="itemDetails">
+
+              </div>
+              <br><br><br>
+          </div>
+      </div>
+    </div>
+</div>
+      
+    <!-- End page content -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-center w3-opacity w3-margin-bottom">
+      <h5>Please give us your feedback</h5>
+      <form action="#" onsubmit="feedback(); return false;">
+        <div class="center">
+          <input autocomplete="off" id="feed" style="color: black" class="w3-input w3-border" type="text" placeholder="Insert your feedback here">
+        </div>
+      <p><button class='buttons button1'>Feedback</button></p>
+    </form>
+      <div class="w3-xlarge w3-padding-16">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+      </div>
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+    </footer>
+
+    <script>
+    // Tabs
+    function openLink(evt, linkName) {
+      var i, x, tablinks;
+      x = document.getElementsByClassName("myLink");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < x.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+      }
+      document.getElementById(linkName).style.display = "block";
+      evt.currentTarget.className += " w3-red";
+    }
+
+    // Click on the first tablink on load
+    document.getElementsByClassName("tablink")[0].click();
+    </script>
+
+    <div id="personinfo"> </div>
+    <script src="inventory.js"></script>
+  </body>
+</html>
